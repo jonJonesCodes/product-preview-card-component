@@ -1,0 +1,134 @@
+
+/* CUSTOM PROPERTIES */
+:root {
+    /* COLOR PROPERTIES */
+    --clr-bg: hsl(30, 38%, 92%);
+    --clr-accent: hsl(158, 36%, 37%);
+
+    /* FONT PROPERTIES */
+    --ff-primary: 'Montserrat', sans-serif;
+    --ff-secondary: 'Fraunces', serif;
+    --fw-reg: 500;
+    --fw-bold: 700;
+    --fs-large: 32px;
+    --fs-small: 14px;
+}
+
+
+
+/* GENERAL STYLING */
+
+html,
+body {
+    height: 100%;
+    background-color: var(--clr-bg);
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* TYPOGRAPHY */
+
+body {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-small);
+}
+
+h1,
+.product-price-discounted {
+    font-size: var(--fs-large);
+    margin: 0;
+}
+
+.product-name,
+.product-price {
+    font-family: var(--ff-secondary);
+}
+
+.product-price-original {
+    padding-left: 20px;
+    text-decoration: line-through;
+}
+
+.product-price-discounted { color: var(--clr-accent); }
+
+.add-to-cart { color: white; }
+
+.product-type { letter-spacing: 2px; }
+
+
+
+/* CARD STYLING */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-card {
+    display: flex;
+    max-width: 600px;
+    max-height: 450px;
+    background: white;
+    border-radius: 10px;
+}
+
+.product-information {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+}
+
+.product-image-mobile {
+    display: none;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.product-image-desktop {
+    width: 50%;
+    margin: 0;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.add-to-cart {
+    border: 0;
+    border-radius: 5px;
+    background-color: var(--clr-accent);
+    padding: 15px;
+}
+
+.add-to-cart:hover {
+    background-image: linear-gradient(rgb(0 0 0/50%) 0 0);
+    cursor: pointer;
+}
+
+/* MEDIA QUERY */
+
+@media (max-width: 600px) {
+    .product-image-desktop {
+        display: none;
+    }
+
+    .product-image-mobile {
+        display: block;
+    }
+
+    .product-card {
+        flex-direction: column;
+        max-width: 95vw;
+        max-height: 95vh;
+    }
+
+    .product-information {
+        width: auto;
+        padding: 10px;
+    }
+}
